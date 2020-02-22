@@ -1,0 +1,134 @@
+/************************************ 
+/ greyp
+/ grey palette for design prototyping 
+************************************/
+/* Background colors: */
+.bg-black {
+  background-color: #000;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-dark {
+  background-color: #060606;
+}
+
+.bg-light {
+  background-color: #f7f7f7;
+}
+
+.bg-dark-1 {
+  background-color: #0e121a;
+}
+
+.bg-dark-2 {
+  background-color: #191e29;
+}
+
+.bg-dark-3 {
+  background-color: #232a38;
+}
+
+.bg-dark-4 {
+  background-color: #2d3648;
+}
+
+.bg-dark-5 {
+  background-color: #384257;
+}
+
+.bg-dark-6 {
+  background-color: #424e66;
+}
+
+.bg-light-1 {
+  background-color: #f0f2f7;
+}
+
+.bg-light-2 {
+  background-color: #eaedf3;
+}
+
+.bg-light-3 {
+  background-color: #e3e7ef;
+}
+
+.bg-light-4 {
+  background-color: #dde2eb;
+}
+
+.bg-light-5 {
+  background-color: #d7dce7;
+}
+
+.bg-light-6 {
+  background-color: #d1d7e3;
+}
+
+/* Text colors: */
+.text-black {
+  color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-dark {
+  color: #060606;
+}
+
+.text-light {
+  color: #f7f7f7;
+}
+
+.text-dark-1 {
+  color: #0e121a;
+}
+
+.text-dark-2 {
+  color: #191e29;
+}
+
+.text-dark-3 {
+  color: #232a38;
+}
+
+.text-dark-4 {
+  color: #2d3648;
+}
+
+.text-dark-5 {
+  color: #384257;
+}
+
+.text-dark-6 {
+  color: #424e66;
+}
+
+.text-light-1 {
+  color: #f0f2f7;
+}
+
+.text-light-2 {
+  color: #eaedf3;
+}
+
+.text-light-3 {
+  color: #e3e7ef;
+}
+
+.text-light-4 {
+  color: #dde2eb;
+}
+
+.text-light-5 {
+  color: #d7dce7;
+}
+
+.text-light-6 {
+  color: #d1d7e3;
+}
+/*# sourceMappingURL=greyp.css.map */

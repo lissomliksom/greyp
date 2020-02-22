@@ -1,0 +1,51 @@
+/*
+1) Fix logic så light-1 = lysest og light-6 = mørkest
+2) Pass på at logic for saturation virker som tenkt: høyest saturation på lysest, lavest saturation på mørkest (av de 6 light-variantene)
+
+
+
+
+Mimics TailwindCSS perfectly:
+$c1: #1a1a1a;
+$c2: #2d2d2d;
+$c3: #4a4a4a;
+$c4: #717171;
+$c5: #a0a0a0;
+$c6: #cbcbcb;
+.-dark-1 { background-color: adjust-color($c1, $green: 6, $blue: 18); }
+.-dark-2 { background-color: adjust-color($c2, $green: 10, $blue: 27); }
+.-dark-3 { background-color: adjust-color($c3, $green: 11, $blue: 30); }
+.-dark-4 { background-color: adjust-color($c4, $green: 15, $blue: 37); }
+.-dark-5 { background-color: adjust-color($c5, $green: 14, $blue: 32); }
+.-dark-6 { background-color: adjust-color($c6, $green: 10, $blue: 21); }
+
+
+// Derived variables.
+$primary: $dark;
+$secondary: $dark;
+$link: $dark;
+...og lag en map og en mixin som looper gjennom alle disse fargene.
+
+
+/// Advanced: tweak prefix and naming conventions.
+$system: [standard, bulma, tailwind]
+
+// Prefix, i.e is-grey-1 or has-background-grey-1
+$prefix-text: '';
+$prefix-background: '';
+
+Multiple systems for generation:
+- 100-900
+- Reasonable system -grey
+- is-dark (darker, darkest) (lighter, lightest)
+
+
+// These should be the very first options, before basics:
+include primary, secondary and link colors: false
+include link styles: false
+
+Copy this site! https://prismic.io/
+
+// for-loop for å generere alle fargene? for (i) { darken (5%*i) }
+// Include scss-file for standard-inclusion in bulma: legg til alle dark- og light- classes i Bulma build-dokumentet.
+*/
