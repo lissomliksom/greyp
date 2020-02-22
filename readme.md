@@ -1,5 +1,5 @@
 # Greyp
-Grey Palette for design prototyping
+Grey Palette for design prototyping.
 
 ## Why
 A small project to practice SCSS and Git. Also to save time in my own design process.
@@ -9,11 +9,16 @@ A small project to practice SCSS and Git. Also to save time in my own design pro
 
 ## How
 Edit the SCSS-variables to suit your own needs, i.e change from cool to warm colors:
+
 `
 $add-light: 5%;
+
 $add-saturation: 10%;
+
 $add-red: 1;
+
 $add-green: 0;
+
 $add-blue: 0;
 `
 
