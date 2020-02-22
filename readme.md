@@ -10,7 +10,6 @@ A small project to practice SCSS and Git. Also to save time in my own design pro
 ## How
 Edit the SCSS-variables to suit your own needs, i.e change from cool to warm colors:
 
-`
 $add-light: 5%;
 
 $add-saturation: 10%;
@@ -20,6 +19,5 @@ $add-red: 1;
 $add-green: 0;
 
 $add-blue: 0;
-`
 
 Try the playground here: [Codepen playground](https://codepen.io/lissomliksom/pen/WNvoRzy?editors=1100)
