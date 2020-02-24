@@ -11,34 +11,104 @@ $light: #f7f7f7; // Lightest grey
 
 // Set color saturation
 $add-light: 5%;
+$add-dark: 2%;
 $add-saturation: 10%;
 $add-red: 0;
 $add-green: 1;
 $add-blue: 3;
 
 /* Background colors: */
-.bg-black { background-color: $black; }
-.bg-white { background-color: $white; }
-.bg-dark { background-color: $dark; }
-.bg-light { background-color: $light; }
-
-@for $i from 1 through 6 {
-  .bg-dark-#{$i} { background-color: saturate(lighten(adjust-color($dark, $red: $add-red, $green: $add-green, $blue: $add-blue), $i * $add-light), $add-saturation / $i); } }
-
-@for $i from 1 through 6 {
-  .bg-light-#{$i} { background-color: saturate(darken(adjust-color($light, $red: $add-red, $green: $add-green, $blue: $add-blue), $i+$i), $add-saturation / $i); } 
+.bg-black {
+  background-color: $black;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-dark {
+  background-color: $dark;
+}
+.bg-light {
+  background-color: $light;
 }
 
+@for $i from 1 through 6 {
+  .bg-dark-#{$i} {
+    background-color: saturate(
+      lighten(
+        adjust-color(
+          $dark,
+          $red: $add-red,
+          $green: $add-green,
+          $blue: $add-blue
+        ),
+        $i * $add-light
+      ),
+      $add-saturation / $i
+    );
+  }
+}
 
+@for $i from 1 through 6 {
+  .bg-light-#{$i} {
+    background-color: saturate(
+      darken(
+        adjust-color(
+          $light,
+          $red: $add-red,
+          $green: $add-green,
+          $blue: $add-blue
+        ),
+        $i * $add-dark
+      ),
+      $add-saturation / $i
+    );
+  }
+}
 
 /* Text colors: */
-.text-black { color: $black; }
-.text-white { color: $white; }
-.text-dark { color: $dark; }
-.text-light { color: $light; }
+.text-black {
+  color: $black;
+}
+.text-white {
+  color: $white;
+}
+.text-dark {
+  color: $dark;
+}
+.text-light {
+  color: $light;
+}
 
 @for $i from 1 through 6 {
-  .text-dark-#{$i} { color: saturate(lighten(adjust-color($dark, $red: $add-red, $green: $add-green, $blue: $add-blue), $i * $add-light), $add-saturation / $i); } }
+  .text-dark-#{$i} {
+    color: saturate(
+      lighten(
+        adjust-color(
+          $dark,
+          $red: $add-red,
+          $green: $add-green,
+          $blue: $add-blue
+        ),
+        $i * $add-light
+      ),
+      $add-saturation / $i
+    );
+  }
+}
 
 @for $i from 1 through 6 {
-  .text-light-#{$i} { color: saturate(darken(adjust-color($light, $red: $add-red, $green: $add-green, $blue: $add-blue), $i+$i), $add-saturation / $i); } }
+  .text-light-#{$i} {
+    color: saturate(
+      darken(
+        adjust-color(
+          $light,
+          $red: $add-red,
+          $green: $add-green,
+          $blue: $add-blue
+        ),
+        $i * $add-dark
+      ),
+      $add-saturation / $i
+    );
+  }
+}
