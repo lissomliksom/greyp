@@ -1,6 +1,8 @@
 # Greyp
 Grey Palette for design prototyping.
 
+Demo: [lissomliksom.github.io/greyp](https://lissomliksom.github.io/greyp)
+
 ## Why
 A small project to practice SCSS and Git. Also to save time in my own design process.
 
@@ -19,5 +21,3 @@ $add-red: 1;
 $add-green: 0;
 
 $add-blue: 0;
-
-Try the playground here: [Codepen playground](https://codepen.io/lissomliksom/pen/WNvoRzy?editors=1100)

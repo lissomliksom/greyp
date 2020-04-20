@@ -6,16 +6,18 @@
 // Set neutral colors.
 $black: #000;
 $white: #fff;
-$dark: #060606; // Darkest grey
-$light: #f7f7f7; // Lightest grey
+$dark: #020202; // Basis for dark colors.
+$light: #cdcdcd; // Basis for light colors.
+$grey: mix($dark, $light);
 
-// Set color saturation
-$add-light: 5%;
-$add-dark: 2%;
+// Set variables for adding lightness and color saturation
+$add-light: 4%;
 $add-saturation: 10%;
 $add-red: 0;
-$add-green: 1;
+$add-green: 2;
 $add-blue: 3;
+
+// Upcoming featuyre: Include link styles true/false
 
 /* Background colors: */
 .bg-black {
@@ -23,46 +25,6 @@ $add-blue: 3;
 }
 .bg-white {
   background-color: $white;
-}
-.bg-dark {
-  background-color: $dark;
-}
-.bg-light {
-  background-color: $light;
-}
-
-@for $i from 1 through 6 {
-  .bg-dark-#{$i} {
-    background-color: saturate(
-      lighten(
-        adjust-color(
-          $dark,
-          $red: $add-red,
-          $green: $add-green,
-          $blue: $add-blue
-        ),
-        $i * $add-light
-      ),
-      $add-saturation / $i
-    );
-  }
-}
-
-@for $i from 1 through 6 {
-  .bg-light-#{$i} {
-    background-color: saturate(
-      darken(
-        adjust-color(
-          $light,
-          $red: $add-red,
-          $green: $add-green,
-          $blue: $add-blue
-        ),
-        $i * $add-dark
-      ),
-      $add-saturation / $i
-    );
-  }
 }
 
 /* Text colors: */
@@ -72,43 +34,115 @@ $add-blue: 3;
 .text-white {
   color: $white;
 }
-.text-dark {
-  color: $dark;
-}
-.text-light {
-  color: $light;
-}
 
-@for $i from 1 through 6 {
-  .text-dark-#{$i} {
-    color: saturate(
+// Add lightness and color saturation to dark colors.
+@function dark($num) {
+  $color-dark: 
+    saturate(
       lighten(
         adjust-color(
           $dark,
-          $red: $add-red,
-          $green: $add-green,
-          $blue: $add-blue
+          $red: $add-red / $num,
+          $green: $add-green / $num,
+          $blue: $add-blue / $num
         ),
-        $i * $add-light
+        $add-light * $num
       ),
-      $add-saturation / $i
+      $add-saturation / $num
     );
+  @return($color-dark);
+}
+
+// Add lightness and color saturation to light colors.
+@function light($num) {
+  $color-light:
+    saturate(
+      lighten(
+        adjust-color(
+          $light,
+          $red: $add-red * $num,
+          $green: $add-green * $num,
+          $blue: $add-blue * $num
+        ),
+        ($add-light * $num) / 2
+      ),
+      $add-saturation * $num
+    );
+  @return($color-light);
+}
+
+// Add dark background, text and borders.
+@for $i from 1 through 6 {
+  .bg-dark-#{$i} {
+    background-color: dark($i)
+  }
+  .text-dark-#{$i} {
+    color: dark($i)
+  }
+  .border-dark-#{$i} {
+    border-color: dark($i)
   }
 }
 
+// Add light background, text and borders.
 @for $i from 1 through 6 {
+  .bg-light-#{$i} {
+    background-color: light($i)
+  }
   .text-light-#{$i} {
-    color: saturate(
-      darken(
-        adjust-color(
-          $light,
-          $red: $add-red,
-          $green: $add-green,
-          $blue: $add-blue
-        ),
-        $i * $add-dark
-      ),
-      $add-saturation / $i
-    );
+    color: light($i)
+  }
+  .border-light-#{$i} {
+    border-color: light($i)
+  }
+}
+
+// Add neutral greys by mixing light and dark colors.
+@for $i from 1 through 6 {
+  .bg-grey-#{$i} {
+    background-color: mix(light($i), dark($i), 8*($i+3));
+  }
+  .text-grey-#{$i} {
+    color: mix(light($i), dark($i), 8*($i+3));
+  }
+  .border-grey-#{$i} {
+    border-color: mix(light($i), dark($i), 8*($i+3));
+  }
+}
+
+// Create color palette greyp-100 -> greyp-900
+@for $i from 1 through 3 {
+  .bg-greyp-#{1000-($i*100)} {
+    background-color: dark($i*2)
+  }
+  .text-greyp-#{1000-($i*100)} {
+    background-color: dark($i*2)
+  }
+  .border-greyp-#{1000-($i*100)} {
+    background-color: dark($i*2)
+  }
+}
+
+@for $i from 1 through 3 {
+  .bg-greyp-#{(1000-($i+3)*100)} {
+    background-color: mix(light($i*2), dark($i*2), 8*($i*2+3));
+  }
+  .text-greyp-#{(1000-($i+3)*100)} {
+    background-color: mix(light($i*2), dark($i*2), 8*($i*2+3));
+  }
+  .border-greyp-#{(1000-($i+3)*100)} {
+    background-color: mix(light($i*2), dark($i*2), 8*($i*2+3));
+  }
+}
+
+@for $i from 1 through 3 {
+  .bg-greyp-#{1000-(($i+6)*100)} {
+    background-color: light($i*2)
+  }
+  .text-greyp-#{1000-(($i+6)*100)} {
+    background-color: light($i*2)
+  }
+  .border-greyp-#{1000-(($i+6)*100)} {
+    background-color: light($i*2)
   }
 }

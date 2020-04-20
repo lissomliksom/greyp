@@ -3,45 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://lissomliksom.github.io/rainbow-classless/rainbow-classless.css">
   <link rel="stylesheet" href="greyp.css">
   <title>greyp</title>
   <style>
-    body {
-      margin: 6em auto;
-      max-width: 52em;
-      padding: 2em;
-    }
-
     .colors {
       display: flex;
       margin-bottom: 1em;
+      justify-content: space-between;
     }
 
     .box {
+      cursor: pointer;
       display: block;
       border-radius: .5em;
-      height: 8em;
+      height: 3.5em;
       margin-right: 1em;
-      width: 8em;
+      width: 5em;
+    }
+
+    .smallbox {
+      border-radius: .5em;
+      height: 1.5em;
+      width: 1.5em;
+      margin: .5em;
+    }
+
+    .smalltext {
+      padding: .5em;
+      font-size: 12px;
+    }
+
+    .palette {
+      display: flex;
     }
   </style>
 </head>
 <body>
-  <section class="colors">
-    <div class="box bg-dark-1"></div>
-    <div class="box bg-dark-2"></div>
-    <div class="box bg-dark-3"></div>
-    <div class="box bg-dark-4"></div>
-    <div class="box bg-dark-5"></div>
-    <div class="box bg-dark-6"></div>
-  </section>
-  <section class="colors">
-    <div class="box bg-light-1"></div>
-    <div class="box bg-light-2"></div>
-    <div class="box bg-light-3"></div>
-    <div class="box bg-light-4"></div>
-    <div class="box bg-light-5"></div>
-    <div class="box bg-light-6"></div>
-  </section>
+  <header>
+    <section>
+      <h1>greyp.</h1>
+      <h2 class="text-grey-1">grey palette for design prototyping.</h2>
+      <hr>
+    </section>
+  </header>
+  
+  <main>
+    <section>
+      <div class="colors">
+        <div>
+          <div class="box bg-dark-1" onClick="bg('dark', 1)"></div>
+          <div class="smalltext">
+            #061015<br>
+            bg-dark-1<br>
+          </div>
+        </div>
+        
+        <div>
+          <div class="box bg-dark-2" onClick="bg('dark', 2)"></div>
+          <div class="smalltext">
+            #101a1f<br>
+            bg-dark-2<br>
+            bg-greyp-900
+          </div>
+        </div>
+
+        <div>
+          <div class="box bg-dark-3" onClick="bg('dark', 3)"></div>
+          <div class="smalltext">
+            #192429<br>
+            bg-dark-3<br>
+          </div>
+        </div>
+
+        <div>
+          <div class="box bg-dark-4" onClick="bg('dark', 4)"></div>
+          <div class="smalltext">
+            #232e33<br>
+            bg-dark-4<br>
+            bg-greyp-800
+          </div>
+        </div>
+
+        <div>
+          <div class="box bg-dark-5" onClick="bg('dark', 5)"></div>
+          <div class="smalltext">
+            #2d383d<br>
+            bg-dark-5<br>
+          </div>
+        </div>
+
+        <div>
+          <div class="box bg-dark-6" onClick="bg('dark', 6)"></div>
+          <div class="smalltext">
+            #374248<br>
+            bg-dark-6<br>
+            bg-greyp-700
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <div class="colors">
+        <div>
+          <div class="box bg-grey-1" onClick="bg('grey', 1)"></div>
+          <div class="smalltext">
+            #464f54<br>
+            bg-grey-1<br>
+          </div>
+        </div>
+        <div>
+          <div class="box bg-grey-2" onClick="bg('grey', 2)"></div>
+          <div class="smalltext">
+            #5d686e<br>
+            bg-grey-2<br>
+            bg-greyp-600
+          </div>
+        </div>
+        <div>
+          <div class="box bg-grey-3" onClick="bg('grey', 3)"></div>
+          <div class="smalltext">
+            #738087<br>
+            bg-grey-3<br>
+          </div>
+        </div>
+        <div>
+          <div class="box bg-grey-4" onClick="bg('grey', 4)"></div>
+          <div class="smalltext">
+            #8a989f<br>
+            bg-grey-4<br>
+            bg-greyp-500
+          </div>
+        </div>
+        <div>
+          <div class="box bg-grey-5" onClick="bg('grey', 5)"></div>
+          <div class="smalltext">
+            #a1afb6<br>
+            bg-grey-5<br>
+          </div>
+        </div>
+        <div>
+          <div class="box bg-grey-6" onClick="bg('grey', 6)"></div>
+          <div class="smalltext">
+            #b9c5ca<br>
+            bg-grey-6<br>
+            bg-greyp-400
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <section>
+      <div class="colors">
+        <div>
+          <div class="box bg-light-1" onClick="bg('light', 1)"></div>
+          <div class="smalltext">
+            #ced5d9<br>
+            bg-light-1<br>
+            bg-greyp-900
+          </div>
+        </div>
+        <div>
+          <div class="box bg-light-2" onClick="bg('light', 2)"></div>
+          <div class="smalltext">
+            #d0dde4<br>
+            bg-light-2<br>
+            bg-greyp-900
+          </div>
+        </div>
+        <div>
+          <div class="box bg-light-3" onClick="bg('light', 3)"></div>
+          <div class="smalltext">
+            #d5e5ed<br>
+            bg-light-3<br>
+            bg-greyp-900
+          </div>
+        </div>
+        <div>
+          <div class="box bg-light-4" onClick="bg('light', 4)"></div>
+          <div class="smalltext">
+            #dbecf4<br>
+            bg-light-4<br>
+            bg-greyp-900
+          </div>
+        </div>
+        <div>
+          <div class="box bg-light-5" onClick="bg('light', 5)"></div>
+          <div class="smalltext">
+            #e3f2fa<br>
+            bg-light-5<br>
+            bg-greyp-900
+          </div>
+        </div>
+        <div>
+          <div class="box bg-light-6" onClick="bg('light', 6)"></div>
+          <div class="smalltext">
+            #ecf7fd<br>
+            bg-light-6<br>
+            bg-greyp-900
+          </div>
+        </div>
+      </div>
+      <button onClick="bg('white')">Reset</button>
+      <hr>
+    </section>
+  
+    <section>
+      <h3>What?</h3>
+      greyp is a tool for generating greyscale color palettes. It takes away a lot of frustration early in my design process and allows me to complete a design without fretting for hours about color combinations.
+      <blockquote>
+        Even when you’re ready to refine an idea in higher fidelity, resist the temptation to introduce color right away. 
+        By designing in grayscale, you’re forced to use spacing, contrast, and size to do all of the heavy lifting.<br>
+        <small>Adam Wathan & Steve Schoger, <em>Refactoring UI</em></small>
+      </blockquote>
+    </section>
+
+    <section>
+      <h3>How?</h3>
+      <h4>Class names</h4>
+      <p>greyp comes with class-names for background-, text- and border-color.</p>
+      <ul>
+        <li><code>&lt;div class="bg-dark-1"&gt;</code></li>
+        <li><code>&lt;p class="text-dark-1"&gt;</code></li>
+        <li><code>&lt;input class="border-dark-1"&gt;</code></li>
+      </ul>
+
+      <h4>Class naming conventions</h4>
+      <p>greyp has two naming conventions available, depending on personal preference.</p>
+
+      <strong>1 - 6</strong> - <small>18 colors in total.</small>
+      <p>Uses same logic as <code>&lt;h1&gt; - &lt;h6&gt;</code>, based on visibility:</p>
+      <ul>
+        <li><code>h1</code> is more visible than <code>h6</code><br></li>
+        <li><code>bg-dark-1</code> is more visible than <code>bg-dark-6</code></li>
+        <li><code>text-grey-1</code> is more visible than <code>text-grey-6</code></li>
+        <li><code>border-light-1</code> is more visible than <code>border-light-6</code></li>
+      </ul>
+      
+      
+      <strong>100 - 900</strong> - <small>9 colors in total.</small>
+      <p>
+        Uses same logic as <code>font-weight</code> and borrowed from 
+        <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">Material Design</a> and 
+        <a href="https://tailwindcss.com/docs/customizing-colors/#default-color-palette">Tailwind</a>
+      </p>
+      <ul>
+        <li><code>bg-greyp-100</code> is lighter than <code>bg-greyp-900</code></li>
+        <li><code>text-greyp-100</code> is lighter than <code>text-greyp-900</code></li>
+        <li><code>border-greyp-100</code> is lighter than <code>border-greyp-900</code></li>
+      </ul>
+      
+
+      <h4>Variables</h4>
+      To generate custom color palettes, modify a these SCSS-variables:
+      <pre>
+<code>
+$dark: #020202;           // Basis for dark colors.
+$light: #cdcdcd;          // Basis for light colors.
+$add-light: 4%;           // Higher values equal lighter colors
+$add-saturation: 10%;     // Add general saturation
+$add-red: 0;              // Add red to colors
+$add-green: 2;            // Add green to colors
+$add-blue: 3;             // Add blue to colors
+</code></pre>
+    </section>
+  </main>
+  
+  <footer>
+    <hr>
+    <small>
+      Made by Simen Kristoffersen: <a href="https://www.github.com/lissomliksom">github.com/lissomliksom</a><br>
+      Basic design created with <a href="https://lissomliksom.github.io/rainbow-classless">rainbow-classless</a>.
+    </small>
+  </footer>
+
+
+  <script>
+    function bg(type, num){
+      document.body.className = '';
+      document.body.classList.add(`bg-${type}-${num}`)
+    }
+  </script>
 </body>
 </html>
