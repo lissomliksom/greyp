@@ -21,3 +21,7 @@ $add-red: 1;
 $add-green: 0;
 
 $add-blue: 0;
+
+## Related projects
+
+Standard palette is now available for the Bulma CSS Framework: [github.com/lissomliksom/bulma-greyp](https://github.com/lissomliksom/bulma-greyp) | [demo](https://lissomliksom.github.io/bulma-greyp)
